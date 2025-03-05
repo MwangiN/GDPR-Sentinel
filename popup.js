@@ -44,3 +44,22 @@ document.getElementById("scan").addEventListener("click", () => {
     });
 });
 
+//listens to background.js
+document.getElementById("scan").addEventListener("click", () => {
+    chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+        if (tabs.length === 0) return;
+
+        let currentUrl = tabs[0].url;
+
+        chrome.runtime.sendMessage({ type: "checkSecurityHeaders", url: currentUrl }, (response) => {
+            if (!response) return;
+
+            document.getElementById("httpsResult").innerText = response.https ? "✅ Secure" : "❌ Not Secure";
+            document.getElementById("cspResult").innerText = response.headers.CSP ? "✅ Present" : "❌ Missing";
+            document.getElementById("hstsResult").innerText = response.headers.HSTS ? "✅ Present" : "❌ Missing";
+            document.getElementById("xFrameResult").innerText = response.headers["X-Frame-Options"] ? "✅ Present" : "❌ Missing";
+        });
+    });
+});
+
+

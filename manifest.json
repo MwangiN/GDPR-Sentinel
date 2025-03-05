@@ -1,9 +1,9 @@
 {
     "manifest_version": 3,
-    "name": "GDPR Sentinel",
+    "name": "Privacy Sight",
     "version": "1.0",
     "description": "Scans websites for GDPR compliance and personal data collection.",
-    "permissions": ["cookies", "storage", "activeTab", "scripting"],
+    "permissions": ["cookies", "storage", "activeTab", "scripting", "declarativeNetRequest"],
     "host_permissions": ["<all_urls>"],
     "background": {
       "service_worker": "background.js"

@@ -7,15 +7,29 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>GDPR Sentinel</h1>
+    <h2>Privacy Sight</h2>
     <p>Scan this site for GDPR compliance.</p>
-    <!--<p id="result">Click "Scan" to check for a Privacy Policy.</p>
-    <p id="bannerResult">Click "Scan" to check for a Cookie Consent Banner.</p> -->
-    <p>
-        Click "Scan" to check for <span id="result">a Privacy Policy</span> and <span id="bannerResult">a Cookie Consent Banner</span>
-    </p>
     
+    <h3>Privacy Check</h3>
+        <ul>
+        <li><span id="result">a Privacy Policy</span></li>
+        <li><span id="bannerResult">a Cookie Consent Banner</span></li>
+        </ul>
+    
+    
+    <h3>Security Check</h3>
+    <div id="securityResult">
+        <p>🔍 HTTPS: <span id="httpsResult">pending</span></p>
+        <p>🛡️ Security Headers:</p>
+        <ul>
+            <li>Content Security Policy (CSP): <span id="cspResult">pending</span></li>
+            <li>Strict Transport Security (HSTS): <span id="hstsResult">pending</span></li>
+            <li>X-Frame-Options: <span id="xFrameResult">pending</span></li>
+        </ul>
+    </div>
+
     <button id="scan">Scan</button>
+    
     <script src="popup.js"></script>
 </body>
 </html>
