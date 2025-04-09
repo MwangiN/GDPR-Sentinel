@@ -26,3 +26,11 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     }
 });
 
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+    if (message.type === "getCookies") {
+        chrome.cookies.getAll({ domain: new URL(sender.tab.url).hostname }, (cookies) => {
+            sendResponse(cookies.map(cookie => cookie.name));
+        });
+        return true; // Keep the message channel open for async response
+    }
+});

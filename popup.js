@@ -62,4 +62,26 @@ document.getElementById("scan").addEventListener("click", () => {
     });
 });
 
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+    if (message.type === "personalDataDetected") {
+        let data = message.data;
+        
+        // Forms
+        let formResults = data.forms.length > 0 ? data.forms.map(f => `• ${f.name || f.type} (Input)`).join("<br>") : "✅ No sensitive form fields detected.";
+
+        // Cookies
+        let cookieResults = data.cookies.length > 0 ? `❗ Found ${data.cookies.length} cookies.` : "✅ No cookies detected.";
+
+        // Local Storage
+        let localStorageResults = data.localStorageKeys.length > 0 ? `❗ Found ${data.localStorageKeys.length} stored keys.` : "✅ No localStorage usage detected.";
+
+        // Session Storage
+        let sessionStorageResults = data.sessionStorageKeys.length > 0 ? `❗ Found ${data.sessionStorageKeys.length} stored keys.` : "✅ No sessionStorage usage detected.";
+
+        document.getElementById("formDataResult").innerHTML = formResults;
+        document.getElementById("cookieResult").innerText = cookieResults;
+        document.getElementById("localStorageResult").innerText = localStorageResults;
+        document.getElementById("sessionStorageResult").innerText = sessionStorageResults;
+    }
+});
 
