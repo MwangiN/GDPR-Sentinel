@@ -84,4 +84,3 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
         document.getElementById("sessionStorageResult").innerText = sessionStorageResults;
     }
 });
-
