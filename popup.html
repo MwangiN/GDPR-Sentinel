@@ -1,3 +1,4 @@
+<!--
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,4 +29,70 @@
     <button id="scan">Scan</button>
     <script src="popup.js"></script>
 </body>
+</html>
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Sight</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="container">
+        <h1> Privacy Sight 🕵🏽 </h1>
+        <p>Scan this website for Privacy Compliance</p>
+
+        <button id="scan">
+            <i class="fas fa-search"></i>
+            <span>Scan</span>
+        </button>
+
+        <section class="check-section">
+            <h3> 🛡️ Privacy Check</h3>
+            <div class="result-item">
+                <i class="fas fa-file-contract"></i>
+                <span>Privacy Policy:</span>
+                <span id="result">Pending</span>
+            </div>
+            <div class="result-item">
+                <i class="fas fa-cookie"></i>
+                <span>Cookie Banner:</span>
+                <span id="bannerResult">Pending</span>
+            </div>
+        </section>
+
+        <section class="check-section">
+            <h3> 🔒 Data Security Check</h3>
+            <div class="result-item">
+                <i class="fas fa-lock"></i>
+                <span>HTTPS:</span>
+                <span id="httpsResult">Pending</span>
+            </div>
+            <div class="result-item">
+                <i class="fas fa-shield-alt"></i>
+                <span>CSP:</span>
+                <span id="cspResult">Pending</span>
+            </div>
+            <div class="result-item">
+                <i class="fas fa-shield-alt"></i>
+                <span>HSTS:</span>
+                <span id="hstsResult">Pending</span>
+            </div>
+            <div class="result-item">
+                <i class="fas fa-shield-alt"></i>
+                <span>X-Frame:</span>
+                <span id="xFrameResult">Pending</span>
+            </div>
+        </section>
+    </div>
+    <script src="popup.js"></script>
+</body>
+
 </html>
