@@ -3,7 +3,7 @@
     "name": "Privacy Sight",
     "version": "1.0",
     "description": "Scans websites for GDPR compliance and personal data collection.",
-    "permissions": ["cookies", "storage", "activeTab", "scripting", "declarativeNetRequest"],
+    "permissions": ["cookies", "activeTab", "scripting"],
     "host_permissions": ["<all_urls>"],
     "background": {
       "service_worker": "background.js"
